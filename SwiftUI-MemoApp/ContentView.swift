@@ -19,6 +19,7 @@ struct ContentView: View {
     
     //追加するテキストを格納
     @State var addText:String = ""
+    @State var addBtn : String = ""
     
     //検索機能
     func find(value searchText:String, in array:[String]) -> Array<Int>?
@@ -69,8 +70,16 @@ struct ContentView: View {
         }
         Text(ttxt)  //検索結果を表示
         SinglePicker(fruits: fruits, selection: $selection)
-        
+            
+            //配列にテキストを追加するボタン
+            Button(action:{
+                self.addBtn = "Add"
+                
+            }){
+                Text("adddd")
+            }
             TextField("Add Text",text: $addText){
+                self.addBtn = "Add"
                 
             }
         }.font(.system(size:30))
