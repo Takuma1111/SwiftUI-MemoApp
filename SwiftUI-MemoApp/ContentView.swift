@@ -17,6 +17,8 @@ struct ContentView: View {
     @State var ttxt:String = ""
     @State var searchText:String = ""
     
+    //追加するテキストを格納
+    @State var addText:String = ""
     
     //検索機能
     func find(value searchText:String, in array:[String]) -> Array<Int>?
@@ -68,6 +70,9 @@ struct ContentView: View {
         Text(ttxt)  //検索結果を表示
         SinglePicker(fruits: fruits, selection: $selection)
         
+            TextField("Add Text",text: $addText){
+                
+            }
         }.font(.system(size:30))
     }
 }
